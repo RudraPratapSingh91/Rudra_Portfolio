@@ -1,0 +1,406 @@
+/* =====================================================
+   HERO.CSS — Front Page / Hero Section
+   ===================================================== */
+
+.hero {
+  padding: var(--space-xl) 0 0;
+  border-bottom: var(--rule-2);
+}
+
+/* ── Kicker bar above headline ────────────────────── */
+.hero-kicker-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-1);
+  padding: 0.4rem 0;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-kicker-bar .kicker-red {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+
+/* ── Main Grid ────────────────────────────────────── */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xl);
+  align-items: start;
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Text Column ──────────────────────────────────── */
+.hero-text {
+  max-width: 680px;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-lg);
+  color: var(--ink);
+}
+
+.hero-headline .headline-accent {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.hero-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--red);
+  margin-bottom: var(--space-lg);
+}
+
+.hero-dek {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  margin-bottom: var(--space-lg);
+  max-width: 560px;
+}
+
+.hero-byline {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  border-top: var(--rule-1);
+  padding-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.hero-byline strong {
+  color: var(--ink);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* ── Portrait Column ──────────────────────────────── */
+.hero-portrait-wrap {
+  width: 420px;
+  flex-shrink: 0;
+}
+
+.hero-portrait-frame {
+  border: var(--rule-2);
+  background: var(--cream-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-portrait-frame img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) sepia(0.15);
+  transition: filter var(--transition);
+}
+
+.hero-portrait-frame:hover img {
+  filter: contrast(1.1) sepia(0.25);
+}
+
+.hero-portrait-caption {
+  border-top: var(--rule-1);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  background: var(--cream);
+  text-align: center;
+  font-style: italic;
+}
+
+.hero-portrait-number {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--red);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.4rem;
+  text-transform: uppercase;
+}
+
+/* ── Download CV Button ────────────────────────────── */
+.download-cv-container {
+  margin-top: 4.0rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background-color: var(--cream);
+  border: var(--rule-2);
+  border-radius: 8px;
+  /* Rounded corners as in user's image */
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 2px 2px 0px var(--ink);
+  /* Flat retro drop shadow to match the vintage feel */
+}
+
+.btn-download-cv:hover {
+  background-color: var(--white);
+  color: var(--red);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--red);
+}
+
+.btn-download-cv:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--ink);
+}
+
+.btn-download-cv .download-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  transition: transform 0.2s ease;
+}
+
+.btn-download-cv:hover .download-icon {
+  transform: translateY(1px);
+}
+
+/* ── 4-Box Stat Strip ─────────────────────────────── */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: var(--rule-2);
+  border-bottom: var(--rule-2);
+}
+
+.stat-box {
+  padding: var(--space-md) var(--space-lg);
+  border-right: var(--rule-1);
+  text-align: center;
+  transition: background var(--transition);
+}
+
+.stat-box:last-child {
+  border-right: none;
+}
+
+.stat-box:hover {
+  background: var(--cream-dark);
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.35rem;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-sub {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hero-portrait-wrap {
+    width: 220px;
+    margin: 0 auto;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-box:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-box:nth-child(3) {
+    border-top: var(--rule-1);
+  }
+
+  .stat-box:nth-child(4) {
+    border-top: var(--rule-1);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+  }
+
+  .hero-ctas .btn {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ── Hero Socials Full-Width Bottom Strip ─────────── */
+.hero-socials {
+  margin-top: var(--space-xl);
+  border-top: var(--rule-2);
+  background: var(--cream-dark);
+  width: 100%;
+}
+
+.hero-socials-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  border-right: var(--rule-1);
+  background: var(--cream);
+  color: var(--ink);
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 120px;
+}
+
+.social-link:last-child {
+  border-right: none;
+}
+
+.social-link svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.social-link svg path {
+  fill: currentColor;
+}
+
+/* Hover States matching vintage/investigative theme */
+.social-link:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.social-link:hover svg {
+  transform: scale(1.2);
+  color: var(--red);
+}
+
+/* Responsive adjustments for the full-width socials */
+@media (max-width: 900px) {
+  .hero-socials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .social-link {
+    border-bottom: var(--rule-1);
+    min-height: 100px;
+    padding: 1.5rem 0;
+  }
+
+  .social-link:nth-child(3) {
+    border-right: none;
+  }
+
+  .social-link:nth-child(6) {
+    border-right: none;
+  }
+
+  .social-link:nth-child(4),
+  .social-link:nth-child(5),
+  .social-link:nth-child(6) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-socials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-link {
+    border-right: var(--rule-1);
+    border-bottom: var(--rule-1);
+    min-height: 90px;
+  }
+
+  .social-link:nth-child(2n) {
+    border-right: none;
+  }
+
+  .social-link:nth-child(5),
+  .social-link:nth-child(6) {
+    border-bottom: none;
+  }
+}
